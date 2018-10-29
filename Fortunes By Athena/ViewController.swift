@@ -9,25 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return heroes.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return heroes[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-    }
     
     @IBOutlet weak var heroPicker: UIPickerView!
     
+    @IBOutlet weak var fortuneLabel: UILabel!
+
+    var selectedHero: Hero?;
+    
+    var currentFortune: String?;
+
     var heroes: [Hero] = [
         Hero(
             name: "Ana",
@@ -45,6 +35,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 "Winston's third fortune."
             ])
     ]
+    
+    //    Number of columns in picker view... for example, time has three (hours, minutes, seconds)
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return heroes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return heroes[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        selectedHero = heroes[row];
+    }
+
+    func generateFortune() {
+        let fortuneCount: Int = selectedHero?.fortunes.count ?? 0
+        let randomFortune: Int = Int.random(in: 0 ... fortuneCount)
+        fortuneLabel.text = selectedHero?.fortunes[randomFortune]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
