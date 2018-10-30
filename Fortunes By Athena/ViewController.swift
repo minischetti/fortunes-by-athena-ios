@@ -52,13 +52,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        selectedHero = heroes[row];
+        selectedHero = heroes[row]
+        heroPicker.isHidden = true
+    }
+ 
+    @IBAction func showHeroPicker(_ sender: Any) {
+        heroPicker.isHidden = false
     }
 
-    func generateFortune() {
+    @IBAction func generateFortune(_ sender: Any) {
         let fortuneCount: Int = selectedHero?.fortunes.count ?? 0
         let randomFortune: Int = Int.random(in: 0 ... fortuneCount)
         fortuneLabel.text = selectedHero?.fortunes[randomFortune]
+        fortuneLabel.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -66,6 +72,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         heroPicker.delegate = self
         heroPicker.dataSource = self
+        
+        fortuneLabel.isHidden = true
     }
 
 
