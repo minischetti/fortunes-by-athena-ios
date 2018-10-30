@@ -53,15 +53,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
         selectedHero = heroes[row]
-        heroPicker.isHidden = true
     }
  
-    @IBAction func showHeroPicker(_ sender: Any) {
-        heroPicker.isHidden = false
+    @IBAction func toggleHeroPicker(_ sender: Any) {
+        heroPicker.isHidden = !heroPicker.isHidden
     }
 
     @IBAction func generateFortune(_ sender: Any) {
-        let fortuneCount: Int = selectedHero?.fortunes.count ?? 0
+        let fortuneCount: Int = (selectedHero?.fortunes.count)! - 1
         let randomFortune: Int = Int.random(in: 0 ... fortuneCount)
         fortuneLabel.text = selectedHero?.fortunes[randomFortune]
         fortuneLabel.isHidden = false
@@ -74,6 +73,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         heroPicker.dataSource = self
         
         fortuneLabel.isHidden = true
+        heroPicker.isHidden = true
     }
 
 
