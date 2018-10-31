@@ -156,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F291915D216A9D2F007C7424 /* Build configuration list for PBXProject "Fortunes By Athena" */;
+			buildConfigurationList = F291915D216A9D2F007C7424 /* Build configuration list for PBXProject "fortunes by athena" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -441,7 +441,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F291915D216A9D2F007C7424 /* Build configuration list for PBXProject "Fortunes By Athena" */ = {
+		F291915D216A9D2F007C7424 /* Build configuration list for PBXProject "fortunes by athena" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F291917D216A9D33007C7424 /* Debug */,

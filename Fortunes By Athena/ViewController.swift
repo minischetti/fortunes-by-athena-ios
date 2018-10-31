@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var fortuneLabel: UILabel!
 
+    @IBOutlet weak var generateFortuneButton: UIButton!
+
     var selectedHero: Hero?;
     
     var currentFortune: String?;
@@ -53,6 +55,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
         selectedHero = heroes[row]
+        generateFortuneButton.isHidden = false
+        
     }
  
     @IBAction func toggleHeroPicker(_ sender: Any) {
@@ -71,9 +75,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         heroPicker.delegate = self
         heroPicker.dataSource = self
-        
-        fortuneLabel.isHidden = true
-        heroPicker.isHidden = true
     }
 
 

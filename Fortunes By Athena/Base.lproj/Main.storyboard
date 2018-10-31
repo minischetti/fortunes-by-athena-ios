@@ -17,14 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNK-y8-Lfh">
-                                <rect key="frame" x="127" y="318.5" width="121" height="30"/>
-                                <state key="normal" title="Generate Fortune"/>
-                                <connections>
-                                    <action selector="generateFortune:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sf6-WL-zTS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-1I-ZF2">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-1I-ZF2">
                                 <rect key="frame" x="166.5" y="120" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -35,22 +28,54 @@
                                 <state key="normal" title="Mystery"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Me-tj-GSp">
-                                <rect key="frame" x="20" y="393" width="335" height="254"/>
+                                <rect key="frame" x="20" y="599" width="335" height="48"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjW-OT-odL">
-                                        <rect key="frame" x="7.5" y="0.0" width="320" height="216"/>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjW-OT-odL">
+                                        <rect key="frame" x="7.5" y="0.0" width="320" height="0.0"/>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX3-EY-Mwd">
-                                        <rect key="frame" x="0.0" y="224" width="335" height="30"/>
-                                        <state key="normal" title="Pick a Hero"/>
-                                        <connections>
-                                            <action selector="toggleHeroPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXJ-QM-UOL"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-8z-Ihg">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX3-EY-Mwd">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
+                                                <color key="backgroundColor" red="1" green="0.51763685719999997" blue="0.033013363560000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                                <state key="normal" title="Pick a Hero">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="toggleHeroPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXJ-QM-UOL"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNK-y8-Lfh">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="48"/>
+                                                <color key="backgroundColor" red="1" green="0.51763685719999997" blue="0.033013363560000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                                <state key="normal" title="Generate Fortune">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="generateFortune:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sf6-WL-zTS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HX3-EY-Mwd" secondAttribute="trailing" id="BsL-g4-N1A"/>
-                                    <constraint firstItem="HX3-EY-Mwd" firstAttribute="leading" secondItem="4Me-tj-GSp" secondAttribute="leading" id="mxr-Ov-m9M"/>
+                                    <constraint firstAttribute="trailing" secondItem="bhB-8z-Ihg" secondAttribute="trailing" id="Bsu-HM-7gU"/>
+                                    <constraint firstItem="bhB-8z-Ihg" firstAttribute="leading" secondItem="4Me-tj-GSp" secondAttribute="leading" id="bF6-XQ-EoN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -59,10 +84,8 @@
                             <constraint firstItem="4Me-tj-GSp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bug-ZA-4Ax"/>
                             <constraint firstItem="dmV-KD-GH7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dqr-FW-jJP"/>
                             <constraint firstItem="dmV-KD-GH7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FO8-cc-55T"/>
-                            <constraint firstItem="hB8-1I-ZF2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HHP-VE-WNO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Me-tj-GSp" secondAttribute="trailing" constant="20" id="L3O-yp-ux1"/>
-                            <constraint firstItem="xNK-y8-Lfh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yhj-yF-wp8"/>
-                            <constraint firstItem="xNK-y8-Lfh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b8m-x5-CLq"/>
+                            <constraint firstItem="hB8-1I-ZF2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="X4T-2a-l8H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Me-tj-GSp" secondAttribute="bottom" constant="20" id="jlD-sr-iFv"/>
                             <constraint firstItem="hB8-1I-ZF2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n2C-AU-H3W"/>
                             <constraint firstItem="4Me-tj-GSp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nWf-gZ-fvF"/>
@@ -76,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="fortuneLabel" destination="hB8-1I-ZF2" id="BKo-Hg-aZz"/>
+                        <outlet property="generateFortuneButton" destination="xNK-y8-Lfh" id="yb7-aA-ZVM"/>
                         <outlet property="heroPicker" destination="gjW-OT-odL" id="BfK-jX-6VX"/>
                     </connections>
                 </viewController>
